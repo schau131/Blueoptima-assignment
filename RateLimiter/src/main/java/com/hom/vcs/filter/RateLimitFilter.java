@@ -89,7 +89,7 @@ public class RateLimitFilter implements Filter {
 	}
 
 
-	public boolean checkForRequestValidity(ServiceConfig serviceConfig, LinkedList<LocalDateTime> localDateTimes, ServiceKey serviceKey) 
+	public synchronized boolean checkForRequestValidity(ServiceConfig serviceConfig, LinkedList<LocalDateTime> localDateTimes, ServiceKey serviceKey) 
 	{
 		int numOfReq = serviceConfig.getNumberOfAllowedRequest();		
 
