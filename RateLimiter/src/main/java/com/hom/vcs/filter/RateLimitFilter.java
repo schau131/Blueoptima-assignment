@@ -67,7 +67,7 @@ public class RateLimitFilter implements Filter {
 						List<ServiceConfig> serviceConfigList = entry.getValue();
 						for(ServiceConfig serviceConfig : serviceConfigList) 
 						{
-							if(clientId == null || (clientId != null && serviceConfig.getClientId().equals(clientId)))
+							if(serviceConfig.getClientId() == null || (serviceConfig.getClientId() != null && serviceConfig.getClientId().equals(clientId)))
 							{
 								ignoreRequest = this.checkForRequestValidity(serviceConfig, localDateTimes, entry.getKey());
 								checked = true;
