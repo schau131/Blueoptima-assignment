@@ -122,7 +122,7 @@ public class RateLimitFilter implements Filter {
 	public boolean checkAndUpdateTimestamp(LinkedList<LocalDateTime> localDateTimes, int numOfReq,
 			LocalDateTime currentLocalDateTime, ServiceKey serviceKey)
 	{
-		if(localDateTimes.size() == numOfReq)
+		if(localDateTimes.size() >= numOfReq)
 		{
 			return true;
 		} 
